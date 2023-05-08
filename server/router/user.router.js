@@ -1,10 +1,8 @@
-const router = require("express").Router();
+const userRouter = require("express").Router();
 
-router.get('/', (req, res) => {
-    console.log("THis is get methos");
-});
-router.post('/', (req, res) => {
-    console.log("This is post methos");
-});
+const { userPostController } = require("../controller/user.controller");
 
-module.exports = { router };
+userRouter.get('/', () => { });
+userRouter.post('/', userPostController);
+
+module.exports = { userRouter };

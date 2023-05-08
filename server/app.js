@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
-const { router } = require("./router/user.router");
+const { userRouter } = require("./router/user.router");
 
 
 app.use(
@@ -13,6 +13,6 @@ app.use(
 app.use(express.json());
 app.use(express.static("public"));
 
-app.use('/user', router);
+app.use('/user', userRouter);
 
 module.exports = app;
